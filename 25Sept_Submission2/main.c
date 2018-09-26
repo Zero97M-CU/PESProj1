@@ -11,9 +11,11 @@ int main(int argc, char **argv)
     char exit = 'e';
     while(1)
 	{
-	    printf("Enter the command you want to execute and exit to terminate code\n");
+	    printf("Enter the command you want to execute. Enter 'h' for help and 'e' to terminate code\n");
+	    
 	    scanf("%c",&ftbe);
 	    if(ftbe==help){
+		printf("\n");
 		func_arr[0](1);
 		}
 
