@@ -14,20 +14,25 @@ int main(int argc, char **argv)
 	    printf("Enter the command you want to execute. Enter 'h' for help and 'e' to terminate code\n");
 	    
 	    scanf("%c",&ftbe);
-	    if(ftbe==help){
-		printf("\n");
-		func_arr[0](1);
+	    if(ftbe==help)
+		{
+			printf("\n");
+			func_arr[0](1);
 		}
 
-	    else if(ftbe == exit){
-		printf("Terminating.......\n");
-		break;
+	    else if(ftbe == exit)
+		{
+			printf("Terminating.......\n");
+			break;
 		}
-
-	    else{
-		printf("\thelp - help menu\n\t exit - terminate program\n");
-		}
-         }
-    return 0;
 	
+	/*
+	    else
+		{
+			printf("\thelp - help menu\n\t exit - terminate program\n");
+		}
+	*/         
+
+	}
+    return 0;
 }
