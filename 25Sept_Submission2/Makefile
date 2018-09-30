@@ -1,2 +1,2 @@
-25SeptWork:main.c
-	gcc main.c help.c allo.c -o 25SeptWork
+Sprint2:main.c
+	gcc main.c help.c allo.c display.c write.c -o Sprint2
