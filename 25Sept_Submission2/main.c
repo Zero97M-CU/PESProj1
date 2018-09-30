@@ -9,8 +9,12 @@ int main(int argc, char **argv)
     func_arr[0](1);
     char help = 'h';
     char exit = 'e';
+<<<<<<< HEAD
     char display = 'd';
     char write = 'w';
+=======
+	// printf("Enter the command you want to execute. Enter 'h' for help and 'e' to terminate code\n");
+>>>>>>> dca6331849404cc4e403aac2a3a46ea27154b529
     while(1)
 	{
 	    printf("Enter the command you want to execute. Enter 'h' for help and 'e' to terminate code\n");
@@ -19,7 +23,7 @@ int main(int argc, char **argv)
 		{
 			printf("\n");
 			func_arr[0](1);
-			continue;
+		//	continue;
 		}
 
 	    else if(ftbe == display)

@@ -1,0 +1,12 @@
+#include<stdio.h>
+
+void main()
+{
+
+int *ptr,i;
+printf("Enter the address of memory location you want to read\n");
+scanf("%d",*ptr);
+printf("How many data locations do you want to read\n");
+scanf("%d"
+
+
