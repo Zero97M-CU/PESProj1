@@ -16,7 +16,7 @@ int allo()
     else
     {
    	memptr = (int*) malloc(num * sizeof(int));
-    
+	printf("%d",memptr);    
     	if(memptr == NULL)
     	{
         	printf("Error! memory not allocated.");
@@ -28,5 +28,5 @@ int allo()
     		printf("%d memory allocated\n",num);
 	}
      }
-    return 0;
+    return memptr;
 }
