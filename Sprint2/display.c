@@ -2,7 +2,7 @@
 
 int display() 
 {
-	int  *ptr, locations;        /* pointer variable declaration */
+	int  *ptr, locations;
 
 	printf("Specify the address: ");
 	scanf("%d", &*ptr);
@@ -12,7 +12,7 @@ int display()
 
 	for(int i=locations; i>0; i--)
 	{
-	printf("Adress: %d --- Value: %x\n", ptr, *ptr);
+	printf("Adress: %x --- Value: %d\n", ptr, *ptr);
 	ptr += 1;
 	}
 

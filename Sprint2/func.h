@@ -1,10 +1,10 @@
-void help(int a);
+int help(int a);
 int allo(int a);
-void free_mem(int a);
-void write(int a);
+int free_mem(int a);
+int write(int a);
 void read(int a);
-void display(int a);
+int display(int a);
 int xor_inv();
-void RandGen(int a);
+int RandGen(int a);
 int exit_app(int a);
 char takeinput();

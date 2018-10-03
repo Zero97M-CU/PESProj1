@@ -7,7 +7,7 @@ int xor_inv()
 	unsigned long value;	
 
 	printf("Enter the value to be inverted: ");
-	scanf("%lu", value);
+	scanf("%lu", &value);
 	
 	clock_t t;
 	t = clock();
@@ -20,7 +20,8 @@ int xor_inv()
 
 	t = clock() - t;
 	double time_taken = ((double)t)/CLOCKS_PER_SEC; // in seconds
-
+	
+	//Prints the time taken for execution
 	printf("It took %f seconds to execute \n", time_taken);
 
 	return 0;

@@ -2,7 +2,7 @@
 
 int write() 
 {
-	int  *ptr;        /* pointer variable declaration */
+	int  *ptr, input;
 	unsigned int value;
 
 	printf("Specify the address: ");
@@ -11,9 +11,9 @@ int write()
 	printf("Specify the value you need to write in hexadecimal: ");
 	scanf("%x", &value);
 
-	*ptr = value;
+	ptr = &value;
 
-	printf("Address:%d --- Value:%x\n", ptr, *ptr);
+	printf("Address:%x --- Value:%d\n", ptr, *ptr);
 
 	return 0;
 }
