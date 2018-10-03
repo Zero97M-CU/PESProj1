@@ -36,10 +36,10 @@ int main(int argc, char **argv)
 
 	//finding the array size dynamically
 	int no_of_func= sizeof(func_names)/sizeof(func_names[0]);
-	printf("%d",no_of_func);
+	//printf("Number of functions: %d\n",no_of_func);
 
 	//Greetings
-    	printf("Welcome User!!!\n\n");
+    	printf("Welcome User!\n\n");
 	printf("Hello!");
 	
 	//Calling help function
