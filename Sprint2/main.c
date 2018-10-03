@@ -9,13 +9,13 @@ int exit_flag = 0;
 int main(int argc, char **argv)
 {
 	//Declaring a variable to store the number of supported functions.
-	int no_of_func = 7;
+	int no_of_func = 8;
 
 	//Declaring a variable to know if user inputs correctly
 	int wrong_input_flag = 1;
 
 	//Declaring function array pointers
-	int (*func_arr[])(int) = {help, allo, free_mem, write, display, RandGen, exit_app};
+	int (*func_arr[])(int) = {help, allo, free_mem, write, display, xor_inv, RandGen, exit_app};
 
 	//variable for storing allocated memory
 	int **memptr;
@@ -31,6 +31,7 @@ int main(int argc, char **argv)
 		"free",
 		"write",
 		"display",
+		"invert",
 		"random",
 		"exit"
 	};

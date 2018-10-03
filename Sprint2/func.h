@@ -4,6 +4,7 @@ void free_mem(int a);
 void write(int a);
 void read(int a);
 void display(int a);
+int xor_inv();
 void RandGen(int a);
 int exit_app(int a);
 char takeinput();
