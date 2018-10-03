@@ -3,6 +3,13 @@
 int help()
 {
 	printf("You are in the help section\n");
-	printf("The available options are:\n\t *help*\n\t *allocate memory*\n\t *free memory*\n\t *write to memory*\n\t *read from memory*\n\t *display from memory*\n\t *random*\n\t *exit*\n");
+	printf("The available options are:\n");
+	printf("\t*help* -- <help\n");
+	printf("\t*allocate memory* -- <allo>\n");
+	printf("\t*free memory* -- <free>\n"); 
+	printf("\t*write to memory* -- <write>\n");
+	printf("\t*display from memory* -- <display>\n"); 
+	printf("\t*random* -- <random>\n");
+ 	printf("\t*exit* -- <exit>\n");
 	return 0;
 }
