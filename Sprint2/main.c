@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 		"random",
 		"exit"
 	};
-
+	
 	//finding the array size dynamically
 	int no_of_func= sizeof(func_names)/sizeof(func_names[0]);
 	//printf("Number of functions: %d\n",no_of_func);
