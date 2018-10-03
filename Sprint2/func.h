@@ -8,3 +8,4 @@ int xor_inv();
 int RandGen(int a);
 int exit_app(int a);
 char takeinput();
+//extern int memptr;

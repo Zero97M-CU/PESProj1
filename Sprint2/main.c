@@ -6,19 +6,17 @@
 //Declaring exit flag which allows program to terminate
 int exit_flag = 0;
 
+//Declaring memory address variable
+int *memptr;
+
+//Main.c
 int main(int argc, char **argv)
 {
-	//Declaring a variable to store the number of supported functions.
-	int no_of_func = 8;
-
 	//Declaring a variable to know if user inputs correctly
 	int wrong_input_flag = 1;
 
 	//Declaring function array pointers
 	int (*func_arr[])(int) = {help, allo, free_mem, write, display, xor_inv, RandGen, exit_app};
-
-	//variable for storing allocated memory
-	int **memptr;
 
 	//Defined a variable for user input
 	char user_func_in[10];
@@ -35,6 +33,10 @@ int main(int argc, char **argv)
 		"random",
 		"exit"
 	};
+
+	//finding the array size dynamically
+	int no_of_func= sizeof(func_names)/sizeof(func_names[0]);
+	printf("%d",no_of_func);
 
 	//Greetings
     	printf("Welcome User!!!\n\n");
@@ -76,5 +78,5 @@ int main(int argc, char **argv)
 		wrong_input_flag = 1;
 
 	}
-	return 0;
+return 0;
 }
