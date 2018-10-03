@@ -1,5 +1,8 @@
 #include <stdio.h>
 
+extern int *memptr;
+extern int offset;
+
 int display() 
 {
 	int  *ptr, locations;

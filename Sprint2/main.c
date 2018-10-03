@@ -9,6 +9,9 @@ int exit_flag = 0;
 //Declaring memory address variable
 int *memptr;
 
+//Declaring offset to allow user to use functions at particular address
+int offset;
+
 //Main.c
 int main(int argc, char **argv)
 {

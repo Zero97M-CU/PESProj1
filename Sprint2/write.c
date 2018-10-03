@@ -1,17 +1,22 @@
 #include <stdio.h>
 
+extern int *memptr;
+extern int offset;
+
 int write() 
 {
-	//int  *ptr;
+	int location;	
 	unsigned int *ptr, value;
 
-	printf("Specify the address: ");
-	scanf("%x", &ptr);
+	printf("Specify the offset: ");
+	scanf("%x", &offset);
 
 	printf("Specify the value you need to write in hexadecimal: ");
 	scanf("%x", &value);
 
-	*ptr = value;
+	location = memptr + offset;
+
+	//*ptr = value;
 
 	printf("Address:%x --- Value:%d\n", ptr, *ptr);
 

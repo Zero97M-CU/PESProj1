@@ -1,21 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 extern int *memptr;
+extern int offset;
+
 int allo()
 {
 	printf("You are allocating memory\n");
-	int num, i;
+	int locations;
 	printf("Enter number of elements: ");
-	scanf("%d", &num);
+	scanf("%d", &locations);
+	offset = locations - 1;
 
-	if (num == 0)
+	if (locations == 0)
 	{	
 		printf("No memory allocated\n");
 	}
 
 	else
 	{
-		memptr = (int*) malloc(num * sizeof(int));
+		memptr = (int*) malloc(locations * sizeof(int));
 	
 		if(memptr == NULL)
 		{
@@ -25,7 +28,7 @@ int allo()
 
 		else
 		{
-			printf("%d memory locations allocated\n",num);
+			printf("%d memory locations allocated\n", locations);
 			printf("Allocation address: %x\n", memptr);
 		}
 	}
