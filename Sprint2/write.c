@@ -2,16 +2,16 @@
 
 int write() 
 {
-	int  *ptr, input;
-	unsigned int value;
+	//int  *ptr;
+	unsigned int *ptr, value;
 
 	printf("Specify the address: ");
-	scanf("%d", &*ptr);
+	scanf("%x", &ptr);
 
 	printf("Specify the value you need to write in hexadecimal: ");
 	scanf("%x", &value);
 
-	ptr = &value;
+	*ptr = value;
 
 	printf("Address:%x --- Value:%d\n", ptr, *ptr);
 

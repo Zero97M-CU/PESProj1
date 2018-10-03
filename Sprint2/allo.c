@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-int *memptr;
+extern int *memptr;
 int allo()
 {
 	printf("You are allocating memory\n");
@@ -16,7 +16,6 @@ int allo()
 	else
 	{
 		memptr = (int*) malloc(num * sizeof(int));
-		printf("%d",memptr);    
 	
 		if(memptr == NULL)
 		{
@@ -26,7 +25,8 @@ int allo()
 
 		else
 		{
-			printf("%d memory allocated\n",num);
+			printf("%d memory locations allocated\n",num);
+			printf("Allocation address: %x\n", memptr);
 		}
 	}
 return 0;

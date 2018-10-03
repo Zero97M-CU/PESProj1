@@ -1,11 +1,13 @@
 #include<stdio.h>
 
-int free_mem(int **memptr)
+extern int *memptr;
+
+int free_mem()
 {
-	printf("%d",memptr);
+	int address = memptr;	
 	free(memptr);
-	printf("%d",memptr);
-	printf("You are freeing allocated memory\n");
+	printf("The previous allocated memory is freed.\n");
+	printf("Memory address which was freed: %d\n", address);
 	return 0;
 }
 
