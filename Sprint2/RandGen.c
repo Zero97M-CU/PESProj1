@@ -17,15 +17,15 @@ int RandGen(int a)
 	else
 	{
 		
-		printf("Enter the offset for random values\n");
+		printf("Enter the offset for random values: ");
 		scanf("%d",&offset);	
 			
-		printf("Enter the no. of random values required. Maximum is 5.\n");
+		printf("Enter the no. of random values required (maximum is 5): ");
 		scanf("%d", &inputs);
 				
 		if((inputs <= 5) && ((offset+inputs)<=total_mem))
 		{
-			printf("Enter a seed value\n");
+			printf("Enter a seed value: ");
 			scanf("%d",&seed);
 
 			num[0]=((((seed*9)/2)+7)*2)%7;

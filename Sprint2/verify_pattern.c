@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 extern int *base_addr, allo_flag, *memptr, total_mem;
 extern int offset;
@@ -16,16 +17,19 @@ int verify_pattern(int a)
 	
 	else
 	{
-		printf("Enter the offset to verify pattern.\n");
+		printf("Enter the offset to verify pattern: ");
 		scanf("%d", &offset);	
 			
-		printf("Enter the no. of values to be verified. Maximum is 5.\n");
+		printf("Enter the no. of values to be verified (maximum is 5): ");
 		scanf("%d", &inputs);
 				
 		if((inputs <= 5) && ((offset+inputs)<=total_mem))
 		{
-			printf("Enter a seed value\n");
+			printf("Enter a seed value: ");
 			scanf("%d",&seed);
+
+			clock_t t;
+			t = clock();
 
 			num[0]=((((seed*9)/2)+7)*2)%7;
 			num[1]=(((seed/2)*10)%9);
@@ -52,7 +56,12 @@ int verify_pattern(int a)
 			}
 
 			if(verify_flag == inputs) printf("Pattern successfully verified.\n");
-
+			
+			t = clock() - t;
+			double time_taken = ((double)t)/CLOCKS_PER_SEC; // in seconds
+			
+			//Prints the time taken for execution
+			printf("It took %f seconds to execute \n", time_taken);
 		}
 
 		else
