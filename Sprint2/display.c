@@ -1,3 +1,7 @@
+//Display from memory//
+//Mohit Rane//
+//gcc, linux terminal//
+
 #include <stdio.h>
 
 extern int *base_addr, allo_flag, *memptr, total_mem;

@@ -31,4 +31,8 @@ could occur such as performing free or any other memory requiring operation with
 memory.
 Or an invalid use input which will show an invalid flag instead of breaking out of the program.
 
+Basic testing is done via a <stdin> test file with all the functions to be tested along with the required
+parametrs for each function. The compiler automatically feeds the parameters after each function invoke
+mentioned in the stdin file.
+
 The entire project took our team (of 2) about 45 man hours and was a very good learning experience.

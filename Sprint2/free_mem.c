@@ -1,3 +1,8 @@
+//Free Allocated Memory//
+//Suman Hosmane and Mohit Rane//
+//gcc, linux terminal//
+//https://www.programiz.com/c-programming/c-dynamic-memory-allocation//
+
 #include<stdio.h>
 #include<stdlib.h>
 

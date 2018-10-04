@@ -1,3 +1,6 @@
+//help.c//
+//Mohit Rane and Suman Hosmane//
+
 #include<stdio.h>
 
 int help()
