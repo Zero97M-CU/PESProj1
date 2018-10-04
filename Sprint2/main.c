@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 	int wrong_input_flag = 1;
 
 	//Declaring function array pointers
-	int (*func_arr[])(int) = {help, allo, free_mem, write, display, xor_inv, RandGen, exit_app};
+	int (*func_arr[])(int) = {help, allo, free_mem, write, display, xor_inv, RandGen, verify_pattern, exit_app};
 
 	//Defined a variable for user input
 	char user_func_in[10];
@@ -43,12 +43,12 @@ int main(int argc, char **argv)
 		"display",
 		"invert",
 		"random",
+		"verify",
 		"exit"
 	};
 	
 	//finding the array size dynamically
-	int no_of_func= sizeof(func_names)/sizeof(func_names[0]);
-	//printf("Number of functions: %d\n",no_of_func);
+	int no_of_func = sizeof(func_names)/sizeof(func_names[0]);
 
 	//Greetings
     	printf("Welcome User!\n\n");
