@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-extern int *memptr;
-extern int offset;
+
+extern int allo_flag, total_mem, offset;
+extern int *base_addr;
 
 int allo()
 {
@@ -18,9 +19,9 @@ int allo()
 
 	else
 	{
-		memptr = (int*) malloc(locations * sizeof(int));
+		base_addr = (int*) malloc(locations * sizeof(int));
 	
-		if(memptr == NULL)
+		if(base_addr == NULL)
 		{
 			printf("Error! memory not allocated.");
 			exit(0);
@@ -28,8 +29,10 @@ int allo()
 
 		else
 		{
+			allo_flag = 1;			
+			total_mem = locations;
 			printf("%d memory locations allocated\n", locations);
-			printf("Allocation address: %x\n", memptr);
+			printf("Allocation address: %x\n", base_addr);
 		}
 	}
 return 0;

@@ -1,24 +1,23 @@
 #include<stdio.h>
 
-extern int *memptr;
+extern int allo_flag;
+extern int *base_addr;
 extern int offset;
 
 int free_mem()
 {
-	int address = memptr;
-	
-	/*
-	for(int i=0; i<=offset; i++)
-	{	
-		free(memptr + i);
+	if(allo_flag == 0)
+	{
+		printf("Please allocate memory before you free.\n");
 	}
-	*/
 
-	free(memptr);	
-	
-	printf("The previous allocated memory is freed.\n");
-	printf("The %d locations from the starting address %x is freed.\n", offset+1, address);
-	
+	else
+	{	
+		free(base_addr);	
+		
+		printf("The previous allocated memory is freed.\n");
+		printf("The %d locations from the starting address %x is freed.\n", offset+1, base_addr);
+	}
 	return 0;
 }
 

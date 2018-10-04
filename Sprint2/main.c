@@ -3,14 +3,23 @@
 #include <string.h>
 #include <stdlib.h>
 
-//Declaring exit flag which allows program to terminate
-int exit_flag = 0;
+//Declaring variable to store base address
+int *base_addr;	
+
+//Declaring a variable to store total memory locations
+int total_mem;
 
 //Declaring memory address variable
 int *memptr;
 
 //Declaring offset to allow user to use functions at particular address
 int offset;
+
+//Declaring exit flag which allows program to terminate
+int exit_flag = 0;
+
+//Declaring a flag to verify allocation status
+int allo_flag = 0;
 
 //Main.c
 int main(int argc, char **argv)
