@@ -77,6 +77,10 @@ int main(int argc, char **argv)
 		if (exit_flag == 1)
 		{
 			printf("See You Later!\n");
+
+			//Frees the memory for reuse before terminating	
+			free(base_addr);
+
 			break;
 		}
 
