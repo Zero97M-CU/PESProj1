@@ -16,7 +16,6 @@ int rand_gen(int a)
 	
 	else
 	{
-		
 		printf("Enter the offset for random values: ");
 		scanf("%d",&offset);	
 			
@@ -39,7 +38,7 @@ int rand_gen(int a)
 			for(int i=0; i<inputs; i++)
 			{		
 				*memptr = num[i];
-				printf("Random number %d: %d --- Address: %x\n", i+1, *memptr, memptr);
+				printf("Random number %d: %d --- Address: %p\n", i+1, *memptr, memptr);
 				memptr += 1;
 			}
 		}

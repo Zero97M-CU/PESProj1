@@ -32,7 +32,7 @@ int allo()
 			allo_flag = 1;			
 			total_mem = locations;
 			printf("%d memory locations allocated\n", locations);
-			printf("Allocation address: %x\n", base_addr);
+			printf("Allocation address: %p\n", base_addr);
 		}
 	}
 return 0;

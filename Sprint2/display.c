@@ -30,7 +30,7 @@ int display()
 		{
 			for(int i=locations; i>0; i--)
 			{
-				printf("Adress: %x --- Value: %x\n", memptr, *memptr);
+				printf("Adress: %p --- Value: %x\n", memptr, *memptr);
 				memptr += 1;
 			}
 		}

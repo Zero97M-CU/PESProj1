@@ -7,7 +7,7 @@ extern int *base_addr;
 // A function that inverts all the bits using xor
 int xor_inv()
 {
-	unsigned long value;	
+	unsigned value;	
 
 	if(allo_flag == 0)
 	{
@@ -40,7 +40,7 @@ int xor_inv()
 			*memptr ^= 0xffffffff;
 
 			//Printing address of result
-			printf("Address of result: %x\n", memptr);
+			printf("Address of result: %p\n", memptr);
 
 			//Prints the inverted value
 			printf("Original value: %x ----- Inverted value: %x\n", value, *memptr);
