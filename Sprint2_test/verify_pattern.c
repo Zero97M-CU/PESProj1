@@ -7,6 +7,7 @@ extern int offset;
 int verify_pattern(int a) 
 {
 	int num[4];
+	int actual[4];
 	int inputs, seed, verify_flag = 0;
 
 	if(allo_flag == 0)
@@ -21,8 +22,15 @@ int verify_pattern(int a)
 			
 		printf("Enter the no. of values to be verified. Maximum is 5.\n");
 		scanf("%d", &inputs);
+		
+		memptr=memptr-1;
+		for(int i=4;i>=0;i--)
+		{
+			actual[i]=*memptr;
+			memptr=memptr-1;
+		}
 				
-		if((inputs <= 5) && ((offset+inputs)<=total_mem))
+		if((inputs <= 5) && ((offset+inputs) <= total_mem))
 		{
 			printf("Enter a seed value\n");
 			scanf("%d",&seed);
@@ -35,7 +43,7 @@ int verify_pattern(int a)
 
 			memptr = base_addr + offset;
 
-			for(int i=0; i<inputs; i++)
+			for(int i=0; i<=inputs; i++)
 			{		
 				if (num[i] == *memptr)
 				{
@@ -45,7 +53,7 @@ int verify_pattern(int a)
 				else
 				{
 					printf("Discrepancy at %x --- ", memptr);
-					printf("Actual value: %d ----- Expected value: %d\n", num[i], *memptr);
+					printf("Actual value: %d ----- Expected value: %d\n", num[i], actual[i]);
 				}
 
 				memptr += 1;
