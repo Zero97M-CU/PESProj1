@@ -1,7 +1,7 @@
 all:Sprint2
 
-Sprint2: main.o help.o allo.o free_mem.o display.o write.o xor_inv.o RandGen.o verify_pattern.o exit_app.o
-	gcc main.o help.o allo.o free_mem.o display.o write.o xor_inv.o RandGen.o verify_pattern.o exit_app.o -o Sprint2
+Sprint2: main.o help.o allo.o free_mem.o display.o write.o xor_inv.o rand_gen.o verify_pattern.o exit_app.o
+	gcc main.o help.o allo.o free_mem.o display.o write.o xor_inv.o rand_gen.o verify_pattern.o exit_app.o -o Sprint2
 
 main.o: main.c
 	gcc -c main.c
@@ -24,8 +24,8 @@ write.o: write.c
 xor_inv.o: xor_inv.c
 	gcc -c xor_inv.c
 
-RandGen.o: RandGen.c
-	gcc -c RandGen.c
+rand_gen.o: rand_gen.c
+	gcc -c rand_gen.c
 
 verify_pattern.o: verify_pattern.c
 	gcc -c verify_pattern.c

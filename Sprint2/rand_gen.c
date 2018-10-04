@@ -4,7 +4,7 @@
 extern int *base_addr, allo_flag, *memptr, total_mem;
 extern int offset;
 
-int RandGen(int a) 
+int rand_gen(int a) 
 {
 	int num[4];
 	int inputs, seed;
