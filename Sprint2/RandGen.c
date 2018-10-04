@@ -28,11 +28,11 @@ int RandGen(int a)
 			printf("Enter a seed value: ");
 			scanf("%d",&seed);
 
-			num[0]=((((seed*9)/2)+7)*2)%7;
-			num[1]=(((seed/2)*10)%9);
+			num[0]=((((seed*9)/2)+7)*2)%17;
+			num[1]=(((seed/2)*10)%11);
 			num[2]=(((876*seed)/4)%12)+3;
-			num[3]=(((seed+4)*6)-5)%7;
-			num[4]=((seed+4)*7677)%7;
+			num[3]=(((seed+4)*6)-5)%13;
+			num[4]=((seed+4)*7677)%18;
 
 			memptr = base_addr + offset;
 

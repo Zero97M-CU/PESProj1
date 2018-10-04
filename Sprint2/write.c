@@ -20,7 +20,7 @@ int write()
 			printf("Specify the value you need to write in hexadecimal: ");
 			scanf("%x", &*memptr);
 
-			printf("Address:%x --- Value:%d\n", memptr, *memptr);
+			printf("Address: %x --- Value: %x\n", memptr, *memptr);
 		}
 	}
 
