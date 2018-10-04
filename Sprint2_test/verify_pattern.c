@@ -1,4 +1,4 @@
-#include <stdio.h>
+	#include <stdio.h>
 #include <stdlib.h>
 
 extern int *base_addr, allo_flag, *memptr, total_mem;
@@ -9,7 +9,6 @@ int verify_pattern(int a)
 	int num[4];
 	int actual[4];
 	int inputs, seed, verify_flag = 0;
-
 	if(allo_flag == 0)
 	{
 		printf("Please allocate memory before you free.\n");
@@ -23,13 +22,13 @@ int verify_pattern(int a)
 		printf("Enter the no. of values to be verified. Maximum is 5.\n");
 		scanf("%d", &inputs);
 		
-		memptr=memptr-1;
+		memptr=(memptr-1);
 		for(int i=4;i>=0;i--)
 		{
 			actual[i]=*memptr;
 			memptr=memptr-1;
 		}
-				
+		//printf("%d",actual);				
 		if((inputs <= 5) && ((offset+inputs) <= total_mem))
 		{
 			printf("Enter a seed value\n");
@@ -41,22 +40,20 @@ int verify_pattern(int a)
 			num[3]=(((seed+4)*6)-5)%7;
 			num[4]=((seed+4)*7677)%7;
 
-			memptr = base_addr + offset;
+			memptr = base_addr + offset + 1;
 
-			for(int i=0; i<=inputs; i++)
+			for(int i=0; i<inputs; i++)
 			{		
-				if (num[i] == *memptr)
+				if(num[i]==actual[i])
 				{
-					verify_flag++;
+					memptr+=1;
 				}
-
+	
 				else
 				{
-					printf("Discrepancy at %x --- ", memptr);
-					printf("Actual value: %d ----- Expected value: %d\n", num[i], actual[i]);
+					printf("Discrepancy at %d --- Actual Value is %d --- Expected Value is %d\n",memptr,num[i],actual[i]); 					       memptr+=1;
 				}
-
-				memptr += 1;
+										
 			}
 
 			if(verify_flag == inputs) printf("Pattern successfully verified.\n");
