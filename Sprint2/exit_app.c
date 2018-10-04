@@ -1,8 +1,9 @@
 extern int exit_flag;
 extern int base_addr;
-exit_app()
+int exit_app()
 {
-//	free(base_addr);
+	//Sets the exit flag for termination	
 	exit_flag = 1;
+	
 	return 0;
 }

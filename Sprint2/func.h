@@ -4,7 +4,7 @@ int free_mem(int a);
 int write(int a);
 int display(int a);
 int xor_inv();
-int RandGen(int a);
+int rand_gen(int a);
 int verify_pattern();
 int exit_app(int a);
 //extern int memptr;
