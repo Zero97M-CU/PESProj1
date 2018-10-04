@@ -24,7 +24,7 @@ int write()
 		}
 	}
 
-	else printf("Please allocate memory before you write to memory.\n");
+	else printf("Please allocate memory before you free.\n");
 	
 	return 0;
 }

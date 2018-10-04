@@ -8,7 +8,7 @@ int display()
 	int locations;
 	if(allo_flag == 0)
 	{
-		printf("Please allocate memory before you can display memory.\n");
+		printf("Please allocate memory before you free.\n");
 	}
 
 	else

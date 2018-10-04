@@ -4,23 +4,22 @@
 extern int *base_addr, allo_flag, *memptr, total_mem;
 extern int offset;
 
-int RandGen(int a) 
+int verify_pattern(int a) 
 {
 	int num[4];
-	int inputs, seed;
+	int inputs, seed, verify_flag = 0;
 
 	if(allo_flag == 0)
 	{
-		printf("Please allocate memory before can generate random numbers.\n");
+		printf("Please allocate memory before you free.\n");
 	}
 	
 	else
 	{
-		
-		printf("Enter the offset for random values\n");
-		scanf("%d",&offset);	
+		printf("Enter the offset to verify pattern.\n");
+		scanf("%d", &offset);	
 			
-		printf("Enter the no. of random values required. Maximum is 5.\n");
+		printf("Enter the no. of values to be verified. Maximum is 5.\n");
 		scanf("%d", &inputs);
 				
 		if((inputs <= 5) && ((offset+inputs)<=total_mem))
@@ -38,10 +37,22 @@ int RandGen(int a)
 
 			for(int i=0; i<inputs; i++)
 			{		
-				*memptr = num[i];
-				printf("Random number %d: %d --- Address: %x\n", i+1, *memptr, memptr);
+				if (num[i] == *memptr)
+				{
+					verify_flag++;
+				}
+
+				else
+				{
+					printf("Discrepancy at %x --- ", memptr);
+					printf("Actual value: %d ----- Expected value: %d\n", num[i], *memptr);
+				}
+
 				memptr += 1;
 			}
+
+			if(verify_flag == inputs) printf("Pattern successfully verified.\n");
+
 		}
 
 		else

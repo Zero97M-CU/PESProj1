@@ -14,7 +14,7 @@ int free_mem()
 	else
 	{	
 		free(base_addr);	
-				
+		
 		printf("The previous allocated memory is freed.\n");
 		printf("The %d locations from the starting address %x is freed.\n", offset+1, base_addr);
 	}

@@ -11,7 +11,7 @@ int verify_pattern(int a)
 
 	if(allo_flag == 0)
 	{
-		printf("Please allocate memory before you free.\n");
+		printf("Please allocate memory before you can verify pattern.\n");
 	}
 	
 	else

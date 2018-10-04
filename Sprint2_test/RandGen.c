@@ -11,7 +11,7 @@ int RandGen(int a)
 
 	if(allo_flag == 0)
 	{
-		printf("Please allocate memory before can generate random numbers.\n");
+		printf("Please allocate memory before you free.\n");
 	}
 	
 	else
