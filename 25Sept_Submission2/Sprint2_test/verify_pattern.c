@@ -1,5 +1,10 @@
-	#include <stdio.h>
+//Verifies the pattern generated in the random number genrator//
+//Mohit Rane and Suman Hosmane//
+
+
+#include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 extern int *base_addr, allo_flag, *memptr, total_mem;
 extern int offset;
@@ -7,57 +12,60 @@ extern int offset;
 int verify_pattern(int a) 
 {
 	int num[4];
-	int actual[4];
 	int inputs, seed, verify_flag = 0;
+
 	if(allo_flag == 0)
 	{
-		printf("Please allocate memory before you free.\n");
+		printf("Please allocate memory before you can verify pattern.\n");
 	}
 	
 	else
 	{
-		printf("Enter the offset to verify pattern.\n");
+		printf("Enter the offset to verify pattern: ");
 		scanf("%d", &offset);	
 			
-		printf("Enter the no. of values to be verified. Maximum is 5.\n");
+		printf("Enter the no. of values to be verified (maximum is 5): ");
 		scanf("%d", &inputs);
-		
-		memptr=(memptr-1);
-		for(int i=4;i>=0;i--)
+				
+		if((inputs <= 5) && ((offset+inputs)<=total_mem))
 		{
-			actual[i]=*memptr;
-			memptr=memptr-1;
-		}
-		//printf("%d",actual);				
-		if((inputs <= 5) && ((offset+inputs) <= total_mem))
-		{
-			printf("Enter a seed value\n");
+			printf("Enter a seed value: ");
 			scanf("%d",&seed);
 
-			num[0]=((((seed*9)/2)+7)*2)%7;
-			num[1]=(((seed/2)*10)%9);
-			num[2]=(((876*seed)/4)%12)+3;
-			num[3]=(((seed+4)*6)-5)%7;
-			num[4]=((seed+4)*7677)%7;
+			clock_t t;
+			t = clock();
 
-			memptr = base_addr + offset + 1;
+			num[0]=((((seed*9)/2)+7)*2)%17;
+			num[1]=(((seed/2)*10)%11);
+			num[2]=(((876*seed)/4)%12)+3;
+			num[3]=(((seed+4)*6)-5)%13;
+			num[4]=((seed+4)*7677)%18;
+
+			memptr = base_addr + offset;
 
 			for(int i=0; i<inputs; i++)
 			{		
-				if(num[i]==actual[i])
+				if (num[i] == *memptr)
 				{
-					memptr+=1;
+					verify_flag++;
 				}
-	
+
 				else
 				{
-					printf("Discrepancy at %d --- Actual Value is %d --- Expected Value is %d\n",memptr,num[i],actual[i]); 					       memptr+=1;
+					printf("Discrepancy at %p --- ", memptr);
+					printf("Actual value: %d ----- Expected value: %d\n", num[i], *memptr);
 				}
-										
+
+				memptr += 1;
 			}
 
 			if(verify_flag == inputs) printf("Pattern successfully verified.\n");
-
+			
+			t = clock() - t;
+			double time_taken = ((double)t)/CLOCKS_PER_SEC; // in seconds
+			
+			//Prints the time taken for execution
+			printf("It took %f seconds to execute \n", time_taken);
 		}
 
 		else

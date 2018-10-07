@@ -1,3 +1,7 @@
+//Display from memory//
+//Mohit Rane//
+//gcc, linux terminal//
+
 #include <stdio.h>
 
 extern int *base_addr, allo_flag, *memptr, total_mem;
@@ -8,7 +12,7 @@ int display()
 	int locations;
 	if(allo_flag == 0)
 	{
-		printf("Please allocate memory before you free.\n");
+		printf("Please allocate memory before you can display memory.\n");
 	}
 
 	else
@@ -30,7 +34,7 @@ int display()
 		{
 			for(int i=locations; i>0; i--)
 			{
-				printf("Adress: %x --- Value: %x\n", memptr, *memptr);
+				printf("Adress: %p --- Value: %x\n", memptr, *memptr);
 				memptr += 1;
 			}
 		}

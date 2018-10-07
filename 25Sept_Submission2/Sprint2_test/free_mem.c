@@ -1,4 +1,10 @@
+//Free Allocated Memory//
+//Suman Hosmane and Mohit Rane//
+//gcc, linux terminal//
+//https://www.programiz.com/c-programming/c-dynamic-memory-allocation//
+
 #include<stdio.h>
+#include<stdlib.h>
 
 extern int allo_flag;
 extern int *base_addr;
@@ -14,9 +20,9 @@ int free_mem()
 	else
 	{	
 		free(base_addr);	
-		
+				
 		printf("The previous allocated memory is freed.\n");
-		printf("The %d locations from the starting address %x is freed.\n", offset+1, base_addr);
+		printf("The %d locations from the starting address %p is freed.\n", offset+1, base_addr);
 	}
 	return 0;
 }

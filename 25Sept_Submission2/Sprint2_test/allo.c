@@ -1,3 +1,9 @@
+//allocate//
+//Suman Hosmane and Mohit Rane//
+//gcc,linux terminal//
+//https://www.programiz.com/c-programming/c-dynamic-memory-allocation//
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -32,7 +38,7 @@ int allo()
 			allo_flag = 1;			
 			total_mem = locations;
 			printf("%d memory locations allocated\n", locations);
-			printf("Allocation address: %x\n", base_addr);
+			printf("Allocation address: %p\n", base_addr);
 		}
 	}
 return 0;
