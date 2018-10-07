@@ -57,7 +57,7 @@ int verify_pattern(int a)
 
                                 else
                                 {
-                                        printf("Discrepancy at %x --- Actual Value is %d --- Expected Value is %d\n",memptr,num[i],actual[i]);                                         memptr+=1;
+                                        printf("Discrepancy at %p --- Actual Value is %d --- Expected Value is %d\n",memptr,num[i],actual[i]);                                         memptr+=1;
                                 }
 
                         }
