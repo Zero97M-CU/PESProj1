@@ -1,3 +1,9 @@
+//Writes into the memory space specified by the user//
+//https://stackoverflow.com/questions/11207783/read-and-write-to-a-memory-location//
+//Mohit Rane//
+
+
+
 #include <stdio.h>
 
 extern int allo_flag, *base_addr, total_mem;

@@ -7,4 +7,5 @@ int xor_inv();
 int rand_gen(int a);
 int verify_pattern();
 int exit_app(int a);
+int clear(int a);
 //extern int memptr;

@@ -1,3 +1,8 @@
+//Generates a maximum of 5 random numbers based on a seed value//
+//Suman Hosmane and Mohit Rane//
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 

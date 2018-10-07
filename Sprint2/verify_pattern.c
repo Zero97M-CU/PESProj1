@@ -1,3 +1,7 @@
+//Verifies the pattern generated in the random number genrator//
+//Mohit Rane and Suman Hosmane//
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

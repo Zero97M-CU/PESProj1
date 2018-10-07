@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 	int wrong_input_flag = 1;
 
 	//Declaring function array pointers
-	int (*func_arr[])(int) = {help, allo, free_mem, write, display, xor_inv, rand_gen, verify_pattern, exit_app};
+	int (*func_arr[])(int) = {help, allo, free_mem, write, display, xor_inv, rand_gen, verify_pattern, exit_app, clear};
 
 	//Defined a variable for user input
 	char user_func_in[10];
@@ -44,7 +44,8 @@ int main(int argc, char **argv)
 		"invert",
 		"random",
 		"verify",
-		"exit"
+		"exit",
+		"clear"
 	};
 	
 	//finding the array size dynamically
