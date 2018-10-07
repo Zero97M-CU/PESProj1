@@ -33,11 +33,11 @@ verifies that the previous random pattern with the new set of values from user a
 
 >-**exit**
 
-the entired program is in a loop and to terminate the loop exit can be invoked.
+the entire program is in a loop and the exit command can be invoked to terminate the program.
 
 While making the project we have taken into consideration some of the boundary conditions that could occur such as performing free or any other memory requiring operation without allocating memory.
-Or an invalid use input which will show an invalid flag instead of breaking out of the program.
+Or an invalid user input which will show an invalid flag instead of breaking out of the program.
 
-Basic testing is done via a **stdin** test file with all the functions to be tested along with the required parametrs for each function. The compiler automatically feeds the parameters after each function invoke mentioned in the stdin file.
+Basic testing is done via a **stdin** test file with all the functions to be tested along with the required parametrs for each function. The compiler automatically feeds the parameters after each function invoked in the stdin file.
 
-The entire project took our team (of 2) about 45 man hours and was a very good learning experience.
+The entire project took our team (of 2) about 55 man hours and was a very good learning experience.
