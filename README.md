@@ -1,15 +1,15 @@
 # PES Project 1
 
 This project demonstrates how to use Makefile to consolidate various .c and .h file into a single project or a single main.c file.
-We have various functionalities incorprorated in the project, listed below:
+We have various functionalities incorporated in the project, listed below:
 
 >-**help**
 
-help command invokes the help function which tells the user as to how to use the different functions (just like the general linux help command) and gives the syntax and purpose of the functions defined.
+help command invokes the help function which tells the user as to how to use the different functions (just like the general Linux help command) and gives the syntax and purpose of the functions defined.
 
 >-**allo**
 
-allo allocates a block of memory as required by a user. Diplays the base address from which the allocation starts from.
+allo allocates a block of memory as required by a user. Displays the base address from which the allocation starts from.
 
 >-**free**
 
@@ -38,6 +38,6 @@ the entire program is in a loop and the exit command can be invoked to terminate
 While making the project we have taken into consideration some of the boundary conditions that could occur such as performing free or any other memory requiring operation without allocating memory.
 Or an invalid user input which will show an invalid flag instead of breaking out of the program.
 
-Basic testing is done via a **stdin** test file with all the functions to be tested along with the required parametrs for each function. The compiler automatically feeds the parameters after each function invoked in the stdin file.
+Basic testing is done via a **stdin** test file with all the functions to be tested along with the required parameters for each function. The compiler automatically feeds the parameters after each function invoked in the stdin file.
 
 The entire project took our team (of 2) about 55 man hours and was a very good learning experience.
