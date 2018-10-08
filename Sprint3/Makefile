@@ -1,7 +1,7 @@
-all:Sprint2
+all:Sprint3
 
-Sprint2: main.o help.o allo.o free_mem.o display.o write.o xor_inv.o rand_gen.o verify_pattern.o exit_app.o clear.o
-	gcc main.o help.o allo.o free_mem.o display.o write.o xor_inv.o rand_gen.o verify_pattern.o exit_app.o clear.o -o Sprint2
+Sprint3: main.o help.o allo.o free_mem.o display.o write.o xor_inv.o rand_gen.o verify_pattern.o exit_app.o clear.o
+	gcc main.o help.o allo.o free_mem.o display.o write.o xor_inv.o rand_gen.o verify_pattern.o exit_app.o clear.o -o Sprint3
 
 main.o: main.c
 	gcc -c main.c
@@ -34,7 +34,7 @@ exit_app.o: exit_app.c
 	gcc -c exit_app.c
 
 clean:
-	rm -rf *o Sprint2
+	rm -rf *o Sprint3
 
 clear.o: clear.c
 	gcc -c clear.c
