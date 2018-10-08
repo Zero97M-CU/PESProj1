@@ -45,7 +45,7 @@ int xor_inv()
 
 				while(1)	//Infinite loop used to make the user enter valid input
 				{
-					if(strcmp(decision_input, "Yes") == 0)
+					if((strcmp(decision_input, "Yes") == 0) || (strcmp(decision_input, "y") == 0) || (strcmp(decision_input, "Y") == 0) || (strcmp(decision_input, "yes") == 0))
 					{
 						//Starts measuring time
 						clock_t t;
@@ -72,7 +72,7 @@ int xor_inv()
 						break;
 					}
 
-					else if(strcmp(decision_input, "No") == 0)
+					else if((strcmp(decision_input, "No") == 0) || (strcmp(decision_input,"N") == 0) || (strcmp(decision_input,"no") == 0) || (strcmp(decision_input,"n") == 0)) 
 					{
 						printf("Enter the values\n");	//User manually inputs values for inversion
 

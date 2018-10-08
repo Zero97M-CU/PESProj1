@@ -12,31 +12,31 @@ extern int *base_addr;
 
 int allo()
 {
-	printf("You are allocating memory\n");
-	int locations;
+	printf("You are allocating memory\n");			
+	int locations;					//Taking input for the allocation size
 	printf("Enter number of elements: ");
 	scanf("%d", &locations);
 	offset = locations - 1;
 
 	if (locations == 0)
 	{	
-		printf("No memory allocated\n");
+		printf("No memory allocated\n");	//error message for null input
 	}
 
 	else
 	{
-		base_addr = (int*) malloc(locations * sizeof(int));
+		base_addr = (int*) malloc(locations * sizeof(int));	//allocating memory starting from a base location	
 	
 		if(base_addr == NULL)
 		{
-			printf("Error! memory not allocated.");
-			exit(0);
+			printf("Error! memory not allocated.");		//error message for invalid or out of range input
+			return(0);
 		}	
 
 		else
 		{
-			allo_flag = 1;			
-			total_mem = locations;
+			allo_flag = 1;				//flag for tracking memory allocation			
+			total_mem = locations;			
 			printf("%d memory locations allocated\n", locations);
 			printf("Allocation address: %p\n", base_addr);
 		}

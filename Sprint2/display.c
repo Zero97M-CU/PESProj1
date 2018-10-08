@@ -10,31 +10,31 @@ extern int offset;
 int display() 
 {
 	int locations;
-	if(allo_flag == 0)
+	if(allo_flag == 0)			//verifying if memory was allocated before invoke of display
 	{
 		printf("Please allocate memory before you can display memory.\n");
 	}
 
 	else
 	{
-		printf("Specify the offset: ");
+		printf("Specify the offset: ");			//memory location to start display from
 		scanf("%d", &offset);
 
 		memptr = base_addr + offset;
 
-		printf("Specify the number of data locations: ");
+		printf("Specify the number of data locations: ");	//how many memory location to display from
 		scanf("%d", &locations);
 
-		if(total_mem<(offset + locations))
+		if(total_mem<(offset + locations))			//verifying if the location is within user access
 		{
-			printf("You are reading outside allocated memory space\n");
+			printf("You are reading outside allocated memory space\n");	
 		}
 		
 		else
 		{
-			for(int i=locations; i>0; i--)
+			for(int i=locations; i>0; i--)			//loop for writing into the memory loaction
 			{
-				printf("Adress: %p --- Value: %x\n", memptr, *memptr);
+				printf("Adress: %p --- Value: %x\n", memptr, *memptr);		
 				memptr += 1;
 			}
 		}

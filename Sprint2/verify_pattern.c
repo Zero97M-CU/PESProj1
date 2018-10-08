@@ -14,7 +14,7 @@ int verify_pattern(int a)
 	int num[4];
 	int inputs, seed, verify_flag = 0;
 
-	if(allo_flag == 0)
+	if(allo_flag == 0)				//verifying memory allocation before verifying
 	{
 		printf("Please allocate memory before you can verify pattern.\n");
 	}
@@ -27,7 +27,7 @@ int verify_pattern(int a)
 		printf("Enter the no. of values to be verified (maximum is 5): ");
 		scanf("%d", &inputs);
 				
-		if((inputs <= 5) && ((offset+inputs)<=total_mem))
+		if((inputs <= 5) && ((offset+inputs)<=total_mem))	//verifying if the conditions are within user access
 		{
 			printf("Enter a seed value: ");
 			scanf("%d",&seed);
@@ -43,7 +43,7 @@ int verify_pattern(int a)
 
 			memptr = base_addr + offset;
 
-			for(int i=0; i<inputs; i++)
+			for(int i=0; i<inputs; i++)		//verifying the random gen values with present values
 			{		
 				if (num[i] == *memptr)
 				{
