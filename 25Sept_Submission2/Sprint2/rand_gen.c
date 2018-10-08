@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <time.h>
 extern int *base_addr, allo_flag, *memptr, total_mem;
-extern int offset;
+extern int offset, rand_input;
 
 int rand_gen(int a) 
 {
@@ -27,6 +27,7 @@ int rand_gen(int a)
 		printf("Enter the no. of random values required (maximum is 5): ");
 		scanf("%d", &inputs);
 		
+		rand_input = inputs;
 				
 		if((inputs <= 5) && ((offset+inputs)<=total_mem))	//generation of random values without rand()
 		{

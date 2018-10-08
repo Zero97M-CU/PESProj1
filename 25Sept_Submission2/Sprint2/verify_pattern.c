@@ -7,12 +7,12 @@
 #include <time.h>
 
 extern int *base_addr, allo_flag, *memptr, total_mem;
-extern int offset;
+extern int offset, rand_input;
 
 int verify_pattern(int a) 
 {
-	int num[4];
-	int inputs, seed, verify_flag = 0;
+	int i,num[4],actual[i];
+	int inputs, seed,length, verify_flag = 0;
 
 	if(allo_flag == 0)				//verifying memory allocation before verifying
 	{
@@ -41,6 +41,19 @@ int verify_pattern(int a)
 			num[3]=(((seed+4)*6)-5)%13;
 			num[4]=((seed+4)*7677)%18;
 
+			memptr=memptr-1;
+			for(int i=(rand_input-1);i>=0;i--)
+			{
+				actual[i]=*memptr;
+				memptr=memptr-1;
+			}
+
+			length = sizeof(actual)/sizeof(actual[0]); 
+
+			printf("Random func values");
+			for(int i=0;i<length;i++)
+				printf("%d\n",actual[i]);
+			
 			memptr = base_addr + offset;
 
 			for(int i=0; i<inputs; i++)		//verifying the random gen values with present values
