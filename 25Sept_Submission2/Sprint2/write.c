@@ -12,7 +12,6 @@ extern int offset;
 
 int write() 
 {	
-	int count;
 	if(allo_flag == 1)
 	{	
 		printf("Specify the offset: ");
@@ -24,28 +23,10 @@ int write()
 		{	
 			memptr = base_addr + offset;
 
-			printf("How many values do you want to enter: ");
-			scanf("%d",&count);
+			printf("Specify the value you need to write in hexadecimal: ");
+			scanf("%x", &*memptr);
 
-			if(count==0)
-			{
-				printf("0 is an invalid input. Try again.\n");
-				return 0;
-			}
-
-			for(int i=0;i<count;i++)
-			{	
-				printf("Specify the value you need to write in hexadecimal: ");
-				scanf("%x", &*memptr);
-				memptr+=1;
-			}
-			
-			memptr=(memptr-count);
-			for(int i=0;i<count;i++)
-			{
-				printf("Address: %p --- Value: %x\n", memptr, *memptr);
-				memptr+=1;
-			}
+			printf("Address: %p --- Value: %x\n", memptr, *memptr);
 		}
 	}
 
