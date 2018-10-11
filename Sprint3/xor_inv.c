@@ -46,7 +46,7 @@ int xor_inv()
 
 			if(total_mem>=(offset + count))
 			{
-				printf("Type \"Yes\" if you want to invert the values which are which are already present at the location, else \"No\": ");
+				printf("Type \"Yes\" for inverting already present values, or \"No\" for adding a nw value to invert: ");
 				scanf("%s", decision_input);
 
 				while(1)	//Infinite loop used to make the user enter valid input
