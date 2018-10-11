@@ -7,12 +7,11 @@
 #include <stdlib.h>
 #include <time.h>
 extern int *base_addr, allo_flag, *memptr, total_mem;
-extern int offset;
+extern int offset, rand_num[4];
 
 int rand_gen(int a) 
-{
-	int num[4];			
-	int inputs, seed;
+{			
+	int inputs, seed,num[4];
 
 	if(allo_flag == 0)
 	{
@@ -26,7 +25,6 @@ int rand_gen(int a)
 			
 		printf("Enter the no. of random values required (maximum is 5): ");
 		scanf("%d", &inputs);
-		
 				
 		if((inputs <= 5) && ((offset+inputs)<=total_mem))	//generation of random values without rand()
 		{
@@ -46,6 +44,7 @@ int rand_gen(int a)
 			for(int i=0; i<inputs; i++)
 			{		
 				*memptr = num[i];			//writing random values into memory location
+				rand_num[i] = *memptr;
 				printf("Random number %d: %d --- Address: %p\n", i+1, *memptr, memptr);
 				memptr += 1;
 			}
@@ -55,6 +54,7 @@ int rand_gen(int a)
 			
 			//Prints the time taken for execution
 			printf("It took %f seconds to execute \n", time_taken);
+			
 		}
 
 		else

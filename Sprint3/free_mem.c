@@ -23,6 +23,7 @@ int free_mem()
 				
 		printf("The previous allocated memory is freed.\n");
 		printf("The %d locations from the starting address %p is freed.\n", offset+1, base_addr);
+		allo_flag = 0;
 	}
 	return 0;
 }

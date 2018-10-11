@@ -7,12 +7,12 @@
 #include <time.h>
 
 extern int *base_addr, allo_flag, *memptr, total_mem;
-extern int offset;
+extern int offset, rand_num[4];
 
 int verify_pattern(int a) 
 {
-	int num[4];
-	int inputs, seed, verify_flag = 0;
+	int i,num[4];
+	int inputs, seed,length, verify_flag = 0;
 
 	if(allo_flag == 0)				//verifying memory allocation before verifying
 	{
@@ -40,20 +40,21 @@ int verify_pattern(int a)
 			num[2]=(((876*seed)/4)%12)+3;
 			num[3]=(((seed+4)*6)-5)%13;
 			num[4]=((seed+4)*7677)%18;
-
+			
 			memptr = base_addr + offset;
 
 			for(int i=0; i<inputs; i++)		//verifying the random gen values with present values
 			{		
-				if (num[i] == *memptr)
+				if (num[i] == rand_num[i])
 				{
 					verify_flag++;
 				}
 
-				else
+			t = clock() - t;
+			                        double time_taken = ((double)t)/CLOCKS_PER_SEC; // in seconds	else
 				{
 					printf("Discrepancy at %p --- ", memptr);
-					printf("Actual value: %d ----- Expected value: %d\n", num[i], *memptr);
+					printf("Actual value: %d ----- Expected value: %d\n", num[i],rand_num[i]);
 				}
 
 				memptr += 1;

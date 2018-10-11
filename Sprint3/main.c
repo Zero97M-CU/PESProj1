@@ -21,6 +21,9 @@ int exit_flag = 0;
 //Declaring a flag to verify allocation status
 int allo_flag = 0;
 
+int rand_input=0;
+
+int rand_num[4];
 //Main.c
 int main(int argc, char **argv)
 {
