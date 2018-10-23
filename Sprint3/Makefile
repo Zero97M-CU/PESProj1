@@ -34,7 +34,7 @@ exit_app.o: exit_app.c
 	gcc -c exit_app.c
 
 clean:
-	rm -rf *o Sprint2
+	rm -rf *o Sprint3
 
 clear.o: clear.c
 	gcc -c clear.c
