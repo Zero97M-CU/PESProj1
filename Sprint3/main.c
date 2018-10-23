@@ -18,10 +18,10 @@ int *memptr;
 uint offset;
 
 //Declaring exit flag which allows program to terminate
-int exit_flag = 0;
+uint exit_flag = 0;
 
 //Declaring a flag to verify allocation status
-int allo_flag = 0;
+uint allo_flag = 0;
 
 int rand_input=0;
 

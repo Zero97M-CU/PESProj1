@@ -7,8 +7,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-extern int allo_flag;
-extern int *base_addr;
+typedef unsigned int uint;
+
+extern int allo_flag, *base_addr;
 extern unsigned int total_mem, offset;
 
 int allo()
@@ -21,9 +22,9 @@ int allo()
 	else
 	{
 		printf("You are allocating memory\n");			
-		int locations;					//Taking input for the allocation size
+		uint locations;					//Taking input for the allocation size
 		printf("Enter number of elements: ");
-		scanf("%d", &locations);
+		scanf("%u", &locations);
 		offset = locations - 1;
 
 		if (locations == 0)
@@ -45,7 +46,7 @@ int allo()
 			{
 				allo_flag = 1;				//flag for tracking memory allocation			
 				total_mem = locations;			
-				printf("%d memory locations allocated\n", locations);
+				printf("%u memory locations allocated\n", locations);
 				printf("Allocation address: %p\n", base_addr);
 			}
 		}
