@@ -7,8 +7,8 @@
 #include<stdlib.h>
 
 extern int allo_flag;
+extern int total_mem;
 extern int *base_addr;
-extern int offset;
 
 int free_mem()
 {
@@ -22,7 +22,7 @@ int free_mem()
 		free(base_addr);		//freeing the base address from which memory allocation started
 				
 		printf("The previous allocated memory is freed.\n");
-		printf("The %d locations from the starting address %p is freed.\n", offset+1, base_addr);
+		printf("The %d locations from the starting address %p is freed.\n", total_mem, base_addr);
 		allo_flag = 0;
 	}
 	return 0;

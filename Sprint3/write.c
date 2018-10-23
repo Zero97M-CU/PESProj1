@@ -34,8 +34,8 @@ int write()
 			}
 
 			for(int i=0;i<count;i++)
-			{	
-				printf("Specify the value you need to write in hexadecimal: ");
+			{
+				printf("Specify value %d, you need to write in hexadecimal: ", (i+1));
 				scanf("%x", &*memptr);
 				memptr+=1;
 			}
