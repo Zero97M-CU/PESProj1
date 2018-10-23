@@ -2,8 +2,9 @@
 #include <time.h>
 #include <string.h>
 
-extern int allo_flag, total_mem, offset, *memptr;
+extern int allo_flag, *memptr;
 extern int *base_addr;
+extern unsigned int total_mem, offset;
 
 // A function that inverts all the bits using xor
 int xor_inv()
@@ -46,7 +47,7 @@ int xor_inv()
 
 			if(total_mem>=(offset + count))
 			{
-				printf("Type \"Yes\" for inverting already present values, or \"No\" for adding a nw value to invert: ");
+				printf("Type \"Yes\" for inverting already present values, or \"No\" for adding a new value to invert: ");
 				scanf("%s", decision_input);
 
 				while(1)	//Infinite loop used to make the user enter valid input

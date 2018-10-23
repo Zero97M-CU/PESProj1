@@ -6,8 +6,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-extern int *base_addr, allo_flag, *memptr, total_mem;
-extern int offset, rand_num[4];
+
+extern int *base_addr, allo_flag, *memptr;
+extern int rand_num[4];
+extern unsigned int total_mem, offset;
 
 int rand_gen(int a) 
 {			

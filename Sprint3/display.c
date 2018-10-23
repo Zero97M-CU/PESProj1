@@ -4,8 +4,9 @@
 
 #include <stdio.h>
 
-extern int *base_addr, allo_flag, *memptr, total_mem;
-extern int offset;
+extern int *base_addr, allo_flag, *memptr;
+extern unsigned int total_mem, offset;
+
 
 int display() 
 {

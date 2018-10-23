@@ -7,7 +7,7 @@
 #include<stdlib.h>
 
 extern int allo_flag;
-extern int total_mem;
+extern unsigned int total_mem;
 extern int *base_addr;
 
 int free_mem()

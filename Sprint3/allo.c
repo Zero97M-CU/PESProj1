@@ -7,8 +7,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-extern int allo_flag, total_mem, offset;
+extern int allo_flag;
 extern int *base_addr;
+extern unsigned int total_mem, offset;
 
 int allo()
 {

@@ -6,9 +6,9 @@
 
 #include <stdio.h>
 
-extern int allo_flag, *base_addr, total_mem;
+extern int allo_flag, *base_addr;
 extern int *memptr;
-extern int offset;
+extern unsigned int total_mem, offset;
 
 int write() 
 {	
