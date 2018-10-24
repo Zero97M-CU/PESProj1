@@ -6,13 +6,13 @@
 typedef unsigned int uint;
 
 //Declaring variable to store base address
-int *base_addr;	
+uint *base_addr;	
 
 //Declaring a variable to store total memory locations
 uint total_mem;
 
 //Declaring memory address variable
-int *memptr;
+uint *memptr;
 
 //Declaring offset to allow user to use functions at particular address
 uint offset;
@@ -23,14 +23,14 @@ uint exit_flag = 0;
 //Declaring a flag to verify allocation status
 uint allo_flag = 0;
 
-int rand_input=0;
+uint rand_input=0;
 
-int rand_num[4];
+uint rand_num[4];
 //Main.c
-int main(int argc, char **argv)
+int main()
 {
 	//Declaring a variable to know if user inputs correctly
-	int wrong_input_flag = 1;
+	uint wrong_input_flag = 1;
 
 	//Declaring function array pointers
 	int (*func_arr[])(int) = {help, allo, free_mem, write, display, xor_inv, rand_gen, verify_pattern, exit_app, clear};
@@ -54,7 +54,7 @@ int main(int argc, char **argv)
 	};
 	
 	//finding the array size dynamically
-	int no_of_func = sizeof(func_names)/sizeof(func_names[0]);
+	uint no_of_func = sizeof(func_names)/sizeof(func_names[0]);
 
 	//Greetings
     	printf("Welcome User!\n\n");
@@ -70,7 +70,7 @@ int main(int argc, char **argv)
 		printf(">");
 		scanf("%s",user_func_in);
 
-		for(int i=0; i<no_of_func; i++)
+		for(uint i=0; i<no_of_func; i++)
 		{
 			if(strcmp(user_func_in, func_names[i]) == 0)
 			{
