@@ -8,12 +8,12 @@
 #include <time.h>
 
 extern int *base_addr, allo_flag, *memptr;
-extern int rand_num[4];
+extern int rand_num[5];
 extern unsigned int total_mem, offset;
 
 int rand_gen(int a) 
 {			
-	int inputs, seed,num[4];
+	int inputs, seed,num[5];
 
 	if(allo_flag == 0)
 	{

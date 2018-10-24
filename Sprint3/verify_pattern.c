@@ -7,12 +7,12 @@
 #include <time.h>
 
 extern int *base_addr, allo_flag, *memptr;
-extern int rand_num[4];
+extern int rand_num[5];
 extern unsigned int total_mem, offset;
 
 int verify_pattern(int a) 
 {
-	int i,num[4];
+	int i,num[5];
 	int inputs, seed,length, verify_flag = 0;
 
 	if(allo_flag == 0)				//verifying memory allocation before verifying
