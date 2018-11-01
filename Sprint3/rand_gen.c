@@ -6,10 +6,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string.h>
 
 extern int *base_addr, allo_flag, *memptr;
 extern int rand_num[5];
 extern unsigned int total_mem, offset;
+
+int takeinput(void);
 
 int rand_gen(int a) 
 {			
@@ -23,15 +26,15 @@ int rand_gen(int a)
 	else
 	{
 		printf("Enter the offset for random values: ");		//specify start address for random numbers
-		scanf("%d",&offset);	
+		offset = takeinput();	
 			
 		printf("Enter the no. of random values required (maximum is 5): ");
-		scanf("%d", &inputs);
+		inputs = takeinput();
 				
 		if((inputs <= 5) && ((offset+inputs)<=total_mem))	//generation of random values without rand()
 		{
 			printf("Enter a seed value: ");
-			scanf("%d",&seed);
+			seed = takeinput();
 			
 			clock_t t;
 			t= clock();

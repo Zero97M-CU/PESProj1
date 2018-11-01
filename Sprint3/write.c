@@ -15,25 +15,6 @@ extern unsigned int total_mem, offset;
 int takeinput(void);
 int takeinputhex(void);
 
-/*int takeinputwr(void)
-{
-        while(1)
-        {	
-		int locations;
-		char str[10];
-                scanf("%s", str);
-                if (str[strspn(str, "0123456789")] == 0)
-                {
-                       locations = atoi(str);
-                       return locations;
-       		}
-
-                else                                                                                                                                                                    {
-                        printf("Enter a valid decimal number.\n\n");
-                }
-        }
-}*/
-
 int takeinputhex(void)
 {
         while(1)
@@ -57,6 +38,7 @@ int takeinputhex(void)
 int write() 
 {	
 	int count;
+
 	if(allo_flag == 1)
 	{	
 		printf("Specify the offset: ");
@@ -72,6 +54,14 @@ int write()
 			count = takeinput();
 
 			while(count==0)
+
+			if(offset + count > total_mem)
+			{
+				printf("You are writing outside allocated space. Try again.\n");
+				return 0;
+			}
+
+			else if(count==0)
 			{
 				printf("0 is an invalid input. Try again.\n");
 				count = takeinput();
