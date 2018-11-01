@@ -27,6 +27,26 @@ uint rand_input=0;
 
 uint rand_num[4];
 //Main.c
+
+int takeinput()
+{
+        while(1)
+        {      
+	       int locations;
+	       char str[10];
+               printf("Enter number of elements: ");
+               scanf("%s", str);
+               if (str[strspn(str, "0123456789")] == 0)
+               {
+                       locations = atoi(str);
+                       return locations;                                                                                                                                               }
+
+               else                                                                                                                                                                    {
+                       printf("Enter a valid decimal number.\n\n");
+               }
+        }
+}
+
 int main()
 {
 	//Declaring a variable to know if user inputs correctly
@@ -83,11 +103,14 @@ int main()
 		if (exit_flag == 1)
 		{
 			printf("See You Later!\n\n");
-
+			if(allo_flag == 1)
+			{
 			//Frees the memory for reuse before terminating	
-			free(base_addr);
-
-			break;
+				free(base_addr);
+				break;
+			}
+			else
+				break;
 		}
 
 		if (wrong_input_flag != 0)

@@ -6,26 +6,46 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 typedef unsigned int uint;
 
 extern int allo_flag, *base_addr;
 extern unsigned int total_mem, offset;
 
-int allo()
+int takeinput(void);
+
+/*int takeinput()
 {
+	while(1)
+	{
+		printf("Enter number of elements: ");
+		scanf("%s", str);
+		if (str[strspn(str, "0123456789")] == 0)
+		{
+			locations = atoi(str);
+			return locations;															                        }
+
+          	else																		                        {
+		        printf("Enter a valid decimal number.\n\n");
+		}
+	}					
+}
+*/
+
+int allo()
+{       
+	int locations;
 	if(allo_flag == 1)
 	{
 		printf("You are allocating memory again.\nKindly free memory before allocating a different block.\n");
 	}
 
 	else
-	{
-		printf("You are allocating memory\n");			
-		uint locations;					//Taking input for the allocation size
-		printf("Enter number of elements: ");
-		scanf("%u", &locations);
+	{		
+		locations = takeinput();
 		offset = locations - 1;
+		
 
 		if (locations == 0)
 		{	
