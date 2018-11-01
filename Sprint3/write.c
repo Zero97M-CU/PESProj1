@@ -13,6 +13,7 @@ extern unsigned int total_mem, offset;
 int write() 
 {	
 	int count;
+
 	if(allo_flag == 1)
 	{	
 		printf("Specify the offset: ");
@@ -27,7 +28,13 @@ int write()
 			printf("How many values do you want to enter: ");
 			scanf("%d",&count);
 
-			if(count==0)
+			if(offset + count > total_mem)
+			{
+				printf("You are writing outside allocated space. Try again.\n");
+				return 0;
+			}
+
+			else if(count==0)
 			{
 				printf("0 is an invalid input. Try again.\n");
 				return 0;

@@ -1,6 +1,6 @@
 //allocate//
 //Suman Hosmane and Mohit Rane//
-//gcc,linux terminal//
+//gcc, linux terminal//
 //https://www.programiz.com/c-programming/c-dynamic-memory-allocation//
 
 
@@ -22,14 +22,15 @@ int allo()
 	else
 	{
 		printf("You are allocating memory\n");			
-		uint locations;					//Taking input for the allocation size
+		uint locations;							//Taking input for the allocation size
 		printf("Enter number of elements: ");
-		scanf("%u", &locations);
-		offset = locations - 1;
+		scanf("%u", &locations);	
 
+		offset = locations - 1;
+		
 		if (locations == 0)
 		{	
-			printf("No memory allocated\n");	//error message for null input
+			printf("No memory allocated\n");			//error message for null input
 		}	
 
 		else
@@ -38,14 +39,15 @@ int allo()
 	
 			if(base_addr == NULL)
 			{
-				printf("Error! memory not allocated.");		//error message for invalid or out of range input
+				printf("Error! memory not allocated.\n");		//error message for invalid or out of range input
 				return(0);
 			}	
 
 			else
 			{
-				allo_flag = 1;				//flag for tracking memory allocation			
-				total_mem = locations;			
+				allo_flag = 1;					//flag for tracking memory allocation			
+				total_mem = locations;
+
 				printf("%u memory locations allocated\n", locations);
 				printf("Allocation address: %p\n", base_addr);
 			}

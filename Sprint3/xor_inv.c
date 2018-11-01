@@ -47,11 +47,12 @@ int xor_inv()
 
 			if(total_mem>=(offset + count))
 			{
-				printf("Type \"Yes\" for inverting already present values, or \"No\" for adding a new value to invert: ");
-				scanf("%s", decision_input);
-
 				while(1)	//Infinite loop used to make the user enter valid input
-				{
+				{					
+					printf("Type \"Yes\" for inverting already present values, or \"No\" for adding a new value to invert: ");
+					scanf("%s", decision_input);
+
+				
 					if((strcmp(decision_input, "Yes") == 0) || (strcmp(decision_input, "y") == 0) || (strcmp(decision_input, "Y") == 0) || (strcmp(decision_input, "yes") == 0))
 					{
 						//Starts measuring time

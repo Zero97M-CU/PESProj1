@@ -25,7 +25,7 @@ uint allo_flag = 0;
 
 uint rand_input=0;
 
-uint rand_num[4];
+uint rand_num[5];
 //Main.c
 int main()
 {
