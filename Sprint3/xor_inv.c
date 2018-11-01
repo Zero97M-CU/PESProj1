@@ -11,7 +11,7 @@ int takeinput(void);
 // A function that inverts all the bits using xor
 int xor_inv()
 {
-	unsigned value[10], count;	//Value array stores the original value stored by user. Count stores number of memory locations in question
+	unsigned value[100], count;	//Value array stores the original value stored by user. Count stores number of memory locations in question
 	char decision_input[4];		//decision_input is used for decision between inverting already stored values or new input values
 	double time_taken;		//time_taken stores the time taken for xor operation
 
