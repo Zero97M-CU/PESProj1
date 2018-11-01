@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <time.h>
 #include <string.h>
+#include <stdlib.h>
 
-extern int allo_flag, *memptr;
-extern int *base_addr;
-extern unsigned int total_mem, offset;
+int allo_flag, *memptr;
+int *base_addr;
+unsigned int total_mem, offset;
 
+int takeinput(void);
 // A function that inverts all the bits using xor
 int xor_inv()
 {
@@ -23,7 +25,7 @@ int xor_inv()
 	else
 	{
 		printf("Enter the offset: ");
-		scanf("%d", &offset);
+		offset = takeinput();
 
 		//Shows error if offset value exceeds total memory allocated		
 		if(offset > (total_mem - 1))
@@ -37,7 +39,7 @@ int xor_inv()
 			memptr = base_addr + offset;	//Memory pointer pointing to the starting address
 
 			printf("Enter number of memory locations whose values are to be inverted starting from offset: ");
-			scanf("%d", &count);
+			count = takeinput();
 			
 			if(count == 0)
 			{

@@ -7,9 +7,9 @@
 #include <time.h>
 #include <string.h>
 
-extern int *base_addr, allo_flag, *memptr;
-extern int rand_num[5];
-extern unsigned int total_mem, offset;
+int *base_addr, allo_flag, *memptr;
+int rand_num[5];
+unsigned int total_mem, offset;
 
 int takeinput(void);
 
@@ -30,6 +30,12 @@ int verify_pattern(int a)
 			
 		printf("Enter the no. of values to be verified (maximum is 5): ");
 		inputs = takeinput();
+
+		while(inputs == 0)
+		{
+			printf("Enter a valid input.\n");
+			inputs = takeinput();
+		}
 				
 		if((inputs <= 5) && ((offset+inputs)<=total_mem))	//verifying if the conditions are within user access
 		{

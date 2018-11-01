@@ -6,8 +6,8 @@
 #include <string.h>
 #include <stdlib.h>
 
-extern int *base_addr, allo_flag, *memptr;
-extern unsigned int total_mem, offset;
+int *base_addr, allo_flag, *memptr;
+unsigned int total_mem, offset;
 
 int takeinput(void);
 

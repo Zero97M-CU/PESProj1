@@ -6,27 +6,46 @@
 typedef unsigned int uint;
 
 //Declaring variable to store base address
-uint *base_addr;	
+extern uint *base_addr;	
 
 //Declaring a variable to store total memory locations
-uint total_mem;
+extern uint total_mem;
 
 //Declaring memory address variable
-uint *memptr;
+extern uint *memptr;
 
 //Declaring offset to allow user to use functions at particular address
-uint offset;
+extern uint offset;
 
 //Declaring exit flag which allows program to terminate
-uint exit_flag = 0;
+extern uint exit_flag;
 
 //Declaring a flag to verify allocation status
-uint allo_flag = 0;
+extern uint allo_flag;
 
-uint rand_input=0;
 
-uint rand_num[5];
+extern uint rand_num[5];
 //Main.c
+
+/*int takeinputhex(void)
+{
+      while(1)
+      {
+             int locations;
+             char str[10];
+             scanf("%s", str);
+             if (str[strspn(str, "0123456789abcdefABCDEF")] == 0)
+             {
+                   locations = atoi(str);
+                   return locations;
+             }
+
+	     else
+             {
+                   printf("Enter a valid decimal number.\n\n");
+             }
+       }
+}*/
 
 int takeinput()
 {
@@ -34,7 +53,6 @@ int takeinput()
         {      
 	       int locations;
 	       char str[10];
-               printf("Enter number of elements: ");
                scanf("%s", str);
                if (str[strspn(str, "0123456789")] == 0)
                {
@@ -49,6 +67,9 @@ int takeinput()
 
 int main()
 {
+	exit_flag = 0;
+
+	allo_flag = 0;
 	//Declaring a variable to know if user inputs correctly
 	uint wrong_input_flag = 1;
 

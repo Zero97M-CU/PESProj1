@@ -10,8 +10,8 @@
 
 typedef unsigned int uint;
 
-extern int allo_flag, *base_addr;
-extern unsigned int total_mem, offset;
+int allo_flag, *base_addr;
+unsigned int total_mem, offset;
 
 int takeinput(void);
 

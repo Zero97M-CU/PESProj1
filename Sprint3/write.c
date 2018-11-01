@@ -8,32 +8,14 @@
 #include <string.h>
 #include <stdlib.h>
 
-extern int allo_flag, *base_addr;
-extern int *memptr;
-extern unsigned int total_mem, offset;
+int allo_flag, *base_addr;
+int *memptr;
+unsigned int total_mem, offset;
 
 int takeinput(void);
 int takeinputhex(void);
 
-int takeinputhex(void)
-{
-        while(1)
-        {
-                int locations;
-                char str[10];
-                scanf("%s", str);
-                if (str[strspn(str, "0123456789abcdefABCDEF")] == 0)
-                {
-                        locations = atoi(str);
-                        return locations;
-                }
-
-                else
-		{
-			 printf("Enter a valid decimal number.\n\n");							
-		}
-        }
-}
+int takeinputhex(void);
 
 int write() 
 {	
@@ -70,7 +52,7 @@ int write()
 			for(int i=0;i<count;i++)
 			{
 				printf("Specify value %d, you need to write in hexadecimal: ", (i+1));
-				*memptr = takeinputhex();
+				scanf("%x",&*memptr);
 				memptr+=1;
 			}
 			

@@ -3,8 +3,8 @@
 
 
 
-extern int exit_flag;
-extern int base_addr;
+int exit_flag;
+int base_addr;
 int exit_app()
 {
 	//Sets the exit flag for termination	
