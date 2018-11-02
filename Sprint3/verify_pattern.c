@@ -15,7 +15,7 @@ int takeinput(void);
 
 int verify_pattern(int a) 
 {
-	int i,num[5];
+	int num[5];
 	int inputs, seed, verify_flag = 0;
 
 	if(allo_flag == 0)				//verifying memory allocation before verifying
