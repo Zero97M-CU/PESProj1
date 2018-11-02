@@ -16,7 +16,7 @@ int takeinput(void);
 int verify_pattern(int a) 
 {
 	int i,num[5];
-	int inputs, seed,length, verify_flag = 0;
+	int inputs, seed, verify_flag = 0;
 
 	if(allo_flag == 0)				//verifying memory allocation before verifying
 	{
@@ -60,8 +60,7 @@ int verify_pattern(int a)
 					verify_flag++;
 				}
 
-			t = clock() - t;
-			                        double time_taken = ((double)t)/CLOCKS_PER_SEC; // in seconds	else
+				else				
 				{
 					printf("Discrepancy at %p --- ", memptr);
 					printf("Actual value: %d ----- Expected value: %d\n", num[i],rand_num[i]);
