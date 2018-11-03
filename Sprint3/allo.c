@@ -28,8 +28,6 @@ int allo()
 		printf("You are allocating memory. Enter number of locations\n");
 		locations = takeinput();
 		offset = locations - 1;
-
-		offset = locations - 1;
 		
 		if (locations == 0)
 		{	
