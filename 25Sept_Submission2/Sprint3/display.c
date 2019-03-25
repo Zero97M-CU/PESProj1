@@ -3,31 +3,45 @@
 //gcc, linux terminal//
 
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
-extern int *base_addr, allo_flag, *memptr, total_mem;
-extern int offset;
+int *base_addr, allo_flag, *memptr;
+unsigned int total_mem, offset;
+
+int takeinput(void);
 
 int display() 
 {
 	int locations;
-	if(allo_flag == 0)			//verifying if memory was allocated before invoke of display
-	{
-		printf("Please allocate memory before you can display memory.\n");
-	}
 
-	else
-	{
+	if(allo_flag == 1)			//verifying if memory was allocated before invoke of display
+	{	
 		printf("Specify the offset: ");			//memory location to start display from
-		scanf("%d", &offset);
+
+		offset = takeinput();
 
 		memptr = base_addr + offset;
 
 		printf("Specify the number of data locations: ");	//how many memory location to display from
-		scanf("%d", &locations);
+		locations = takeinput();
+
+		while(locations==0)
+		{
+			printf("Start from 1.\n 0 is an invalid input\n");
+			locations = takeinput();
+		}
+		
+		if(offset >= total_mem) printf("You are writing outside allocated space. Try again.\n");
 
 		if(total_mem<(offset + locations))			//verifying if the location is within user access
-		{
+		{	
 			printf("You are reading outside allocated memory space\n");	
+		}
+		
+		else if(locations==0)
+		{
+			printf("Start from 1.\n 0 is an invalid input\n");
 		}
 		
 		else
@@ -39,5 +53,8 @@ int display()
 			}
 		}
 	}
+
+	else printf("Please allocate memory before you write to memory.\n");
+
 	return 0;
 }
