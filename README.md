@@ -1,43 +1,56 @@
-# PES Project 1
+# Project 1 - Interactive Memory Manipulation Utility
 
 This project demonstrates how to use Makefile to consolidate various .c and .h file into a single project or a single main.c file.
 We have various functionalities incorporated in the project, listed below:
 
->-**help**
+<pre>
+> help
+</pre>
 
-help command invokes the help function which tells the user as to how to use the different functions (just like the general Linux help command) and gives the syntax and purpose of the functions defined.
+Invokes the help function which tells the user as to how to use the different functions (just like the general Linux help command) and gives the syntax and purpose of the functions defined.
 
->-**allo**
+<pre>
+> allo
+</pre>
 
-allo allocates a block of memory as required by a user. Displays the base address from which the allocation starts from.
+Allocates a block of memory as required by a user. Displays the base address from which the allocation starts from.
 
->-**free**
+<pre>
+> free
+</pre>
 
-releases the block of allocated memory in the allocate function.
+Releases the block of allocated memory in the allocate function.
 
->-**write**
+<pre>
+> write
+</pre>
 
-asks for an offset from user and feeds the data provided into the particular offset
+Asks for an offset from user and feeds the data provided into the particular offset
 
->-**display**
+<pre>
+> display
+</pre>
 
-reads back data in that particular memory location.
+Reads back data in that particular memory location.
 
->-**random**
+<pre>
+> random
+</pre>
 
-generates upto 5 random numbers from a seed value provided by the user.
+Generates upto 5 random numbers from a seed value provided by the user.
+<pre>
+> verify
+</pre>
 
->-**verify**
+Verifies that the previous random pattern with the new set of values from user and if a match occurs, pattern is verified, else displays address of mismatch and values expected and calculated.
 
-verifies that the previous random pattern with the new set of values from user and if a match occurs, pattern is verified, else displays address of mismatch and values expected and calculated.
+<pre>
+> exit
+</pre>
 
->-**exit**
-
-the entire program is in a loop and the exit command can be invoked to terminate the program.
+The entire program is in a loop and the exit command can be invoked to terminate the program.
 
 While making the project we have taken into consideration some of the boundary conditions that could occur such as performing free or any other memory requiring operation without allocating memory.
 Or an invalid user input which will show an invalid flag instead of breaking out of the program.
 
 Basic testing is done via a **stdin** test file with all the functions to be tested along with the required parameters for each function. The compiler automatically feeds the parameters after each function invoked in the stdin file.
-
-The entire project took our team (of 2) about 55 man hours and was a very good learning experience.
