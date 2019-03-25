@@ -1,6 +1,11 @@
 # Project 1 - Interactive Memory Manipulation Utility
 
-This project demonstrates how to use Makefile to consolidate various .c and .h file into a single project or a single main.c file.
+Contributors: Mohit Rane and Suman Hosmane
+
+Description:
+
+This program allows the user to manipulate heap and perform various operations.
+
 We have various functionalities incorporated in the project, listed below:
 
 <pre>
